@@ -3,6 +3,9 @@ import { HabitForm } from './components/HabitForm'
 import { HabitList } from './components/HabitList'
 import { Header } from './components/Header'
 import { HabitProvider } from './context/HabitProvider'
+import SampleTask from './components/SampleTask'
+import HabitCount from "./components/HabitCount"
+
 
 import { addWeeks, eachDayOfInterval, endOfWeek, startOfWeek } from 'date-fns'
 
@@ -20,7 +23,7 @@ export default function App() {
 
   return (
     <div className="max-w-2xl mx-auto p-4 flex flex-col gap-4">
-      <HabitProvider>
+  <HabitProvider>
   <Header
     visibleDates={visibleDates}
     onePrev={() => setWeekOffset(prev => prev - 1)}
@@ -45,13 +48,11 @@ export default function App() {
   </div>
 
   <HabitForm />
+  <HabitCount />
+  <SampleTask />
 
   <HabitList visibleDates={visibleDates} />
 </HabitProvider>
     </div>
   )
 }
-
-
-
-
